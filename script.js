@@ -24,6 +24,8 @@ forma10.calcularArea()
 forma10.calcularVolume()
 
 
+
+
 // EXERCICIO 2 e 3
 
 class FormaPlana extends Forma  {
@@ -61,20 +63,20 @@ class FormaPlana extends Forma  {
         return this.#comprimento
     }
 
-    settipo(novocomprimento){
+    setcomprimento(novocomprimento){
 
         this.#comprimento = novocomprimento
     }
 
     calcularArea(){
 
-        if(this.#tipo = retangular){
+        if(this.#tipo === "retangular"){
 
-            return area = (this.#base*this.#comprimento).toFixed(2)
+            return  (this.#base*this.#comprimento).toFixed(2)
         }
-        if(this.#tipo = triangular ){
+        if(this.#tipo === "triangular" ){
 
-            return area = ((this.#base*this.#comprimento)/2).toFixed(2)
+            return  ((this.#base*this.#comprimento)/2).toFixed(2)
         }
         else{
             console.log("A forma inserida não é Válida")
@@ -85,20 +87,20 @@ class FormaPlana extends Forma  {
 
     calcularVolume(){
 
-        if(this.#tipo = retangular ){ 
+        if(this.#tipo === "retangular" ){ 
             
-            areabase = this.calcularArea(
+        let areabase = this.calcularArea(
                 this.#base , this.#comprimento
             )
 
-            return volume = (areabase*this.#comprimento).toFixed(2)
+            return  (areabase*this.#comprimento).toFixed(2)
 
 
         }
 
-        if(this.#tipo = triangular ){
+        if(this.#tipo === "triangular" ){
 
-            return volume = ((areabase*this.#comprimento)/2).toFixed(2)
+            return ((areabase*this.#comprimento)/2).toFixed(2)
         }
         else{
             console.log("A forma inserida não é Válida")
@@ -110,8 +112,15 @@ class FormaPlana extends Forma  {
 
 let formaplana1 = new FormaPlana (10,"retangular" , 10 , 5)
 
-formaplana1.calcularArea
-formaplana1.calcularVolume
+let areafp1 = formaplana1.calcularArea()
+let volumefp1 = formaplana1.calcularVolume()
+
+console.log(areafp1)
+console.log(volumefp1)
+
+
+
+
 
 
 
@@ -121,7 +130,6 @@ class FormaCircular extends Forma {
         #pi
         #raio
         
-
         
         constructor(altura,raio){
             super(altura)
@@ -129,6 +137,8 @@ class FormaCircular extends Forma {
             this.#pi = 3.14
             this.#raio = raio
         }
+
+        
 
         getpi(){
             return this.#pi
@@ -144,32 +154,43 @@ class FormaCircular extends Forma {
 
         calcularArea(){
 
-            return area = (this.#pi*Math.pow(this.#pi,2)).toFixed
+            return (this.#pi*Math.pow(this.#pi,2)).toFixed(2)
         }
 
         calcularVolumeCilindro(){
 
-            return volume = (area*this.altura).toFixed(2)
+            let area = this.calcularArea()
+            return (area*this.altura).toFixed(2)
         }
 
         calcularVolumeCone(){
-
-            return volume = ((area*this.altura)/3).toFixed(2)
+            let area = this.calcularArea()
+            return ((area*this.altura)/3).toFixed(2)
         }
 
         calcularVolumeEsfera(){
-
-            return volume = (area*this.#raio*1.33).toFixed(2)
+            let area = this.calcularArea()
+            return (area*this.#raio*1.33).toFixed(2)
         }
+
+        
 
 }
 
+
+
 let formacircular1 = new FormaCircular (5,10)
 
-formacircular1.calcularArea
-formacircular1.calcularVolumeCilindro
-formacircular1.calcularVolumeCone
-formacircular1.calcularVolumeEsfera
+let areac1 = formacircular1.calcularArea()
+let vcc1 = formacircular1.calcularVolumeCilindro()
+let cvc1 =formacircular1.calcularVolumeCone()
+let cvec1 = formacircular1.calcularVolumeEsfera()
+
+console.log(areac1)
+console.log(vcc1)
+console.log(cvc1)
+console.log(cvec1)
+
 
 
 
@@ -184,6 +205,8 @@ formacircular1.calcularVolumeEsfera
 // EXERCICIO 7
 
 // saidas registradas em todos os metodos apos instaciar um item para cada classe
+
+//  questão b ===== 
 
 
 
